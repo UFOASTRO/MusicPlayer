@@ -26,4 +26,11 @@ song.ontimeupdate = function() {
     progress.value = song.currentTime;
 };
 
+progress.addEventListener('change', function() {
+    song.currentTime = progress.value;
+    song.play();
+    picture.classList.add('playing'); // Resume animation
+    control.classList.add('fa-pause');
+    control.classList.remove('fa-play');
+});
 control.addEventListener('click', playPause);
