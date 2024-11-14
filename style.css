@@ -19,5 +19,5 @@
     background-position: center;
     color: transparent;
     background-size:contain;
-    -webkit-text-stroke: black 3px;
+    -webkit-text-stroke: rgb(163, 162, 162) 3px;
 }
