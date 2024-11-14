@@ -34,3 +34,23 @@ progress.addEventListener('change', function() {
     control.classList.remove('fa-play');
 });
 control.addEventListener('click', playPause);
+lengthOfSong =song.duration;
+console.log(lengthOfSong)
+
+// Chat GPT helped me with this block.😭
+song.addEventListener('ended', () => {
+    picture.classList.remove('asake'); // Stop animation when song ends
+    control.classList.remove('fa-pause');
+    control.classList.add('fa-rotate-right');
+
+    // Add a click event listener for restarting the song
+    control.addEventListener('click', function restartSong() {
+        song.currentTime = 0; // Reset song to the beginning
+        song.play(); // Start the song again
+        control.classList.remove('fa-rotate-right');
+        control.classList.add('fa-pause');
+
+        // Remove this event listener to prevent multiple triggers
+        control.removeEventListener('click', restartSong);
+    });
+});
