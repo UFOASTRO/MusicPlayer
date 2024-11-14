@@ -1,0 +1,23 @@
+.asake{
+    /* animation-name: ; */
+    animation: rotate 40s infinite ease;
+    animation-play-state: paused;
+}
+.asake.playing {
+    animation-play-state: running;
+}
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.nameDesign{
+    color: white;
+    background-position: center;
+    color: transparent;
+    background-size:contain;
+    -webkit-text-stroke: black 3px;
+}
